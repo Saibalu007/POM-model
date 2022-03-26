@@ -1,0 +1,18 @@
+{
+
+"firstName": "Sai",
+"lastName": "Balu",
+"address": [
+{
+"street": "abc",
+"city": "Trivandrum",
+"state": "Kerala"
+},
+
+{
+"street": "abc",
+"city": "Chennai",
+"state": "TamilNadu"
+}
+]
+}
