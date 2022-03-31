@@ -15,7 +15,7 @@ public class BaseTest {
 
 		driver = new DriverManager().intializeDriver();
 
-		driver.get("https://tmadmin:vh^%25f53cFvdD(5c@staging-fillme.terrificminds.com/");
+		// driver.get("https://tmadmin:vh^%25f53cFvdD(5c@staging-fillme.terrificminds.com/");
 		// driver.get("http://tm:1234@dev-woodblocx.terrificminds.com:8090/");
 	}
 

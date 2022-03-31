@@ -2,7 +2,7 @@ package objects;
 
 import java.io.IOException;
 
-import utils.JacksonUtilis;
+import utils.JacksonUtils;
 
 public class Products {
 
@@ -14,7 +14,7 @@ public class Products {
 
 	// extracting data from product array
 	public Products(int id) throws IOException {
-		Products[] products = JacksonUtilis.deserializeJson("products.json", Products[].class);
+		Products[] products = JacksonUtils.deserializeJson("products.json", Products[].class);
 		for (Products product : products) {
 			if (product.getId() == id) {
 				this.id = id;

@@ -5,12 +5,12 @@ import java.io.InputStream;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class JacksonUtilis {
+public class JacksonUtils {
 
 	public static <T> T deserializeJson(String filePath, Class<T> T) throws IOException {
 
 		ObjectMapper objectMapper = new ObjectMapper();
-		InputStream is = JacksonUtilis.class.getClassLoader().getResourceAsStream(filePath);
+		InputStream is = JacksonUtils.class.getClassLoader().getResourceAsStream(filePath);
 		return objectMapper.readValue(is, T);
 
 	}

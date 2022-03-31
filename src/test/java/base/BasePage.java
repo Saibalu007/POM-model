@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import utils.ConfigLoader;
+
 public class BasePage {
 
 	protected WebDriver driver;
@@ -17,6 +19,14 @@ public class BasePage {
 
 		this.driver = driver;
 		wait = new WebDriverWait(driver, 30);
+	}
+
+	// Base Url
+	public void load(String endPoint) {
+
+		// driver.get("https://tmadmin:vh^%25f53cFvdD(5c@staging-fillme.terrificminds.com/"
+		// + endPoint);
+		driver.get(ConfigLoader.getInstance().getBaseUrl() + endPoint);
 	}
 
 // to wait for the overlays to disappear if occurs
@@ -32,4 +42,5 @@ public class BasePage {
 		}
 
 	}
+
 }

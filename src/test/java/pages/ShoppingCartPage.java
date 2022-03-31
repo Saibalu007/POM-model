@@ -13,21 +13,33 @@ import base.BasePage;
 
 public class ShoppingCartPage extends BasePage {
 
-	private final By scroll = By.xpath("//th[@class='mark']//strong[contains(text(),'Bestellsumme inkl. MwSt.')]");
+	// private final By scroll =
+	// By.xpath("//th[@class='mark']//strong[contains(text(),'Bestellsumme inkl.
+	// MwSt.')]");
+	private final By scrollOne = By.xpath("//th[@class='mark']//strong[contains(text(),'Bestellsumme inkl.')]");
 	private final By checkoutBtn = By.xpath("//a[@class='chekout-button']");
+	private final By load = By.xpath("//ul[@class='items']");
 
 	public ShoppingCartPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
 
+	// get Title
+	public String getTitle() {
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(load));
+		return driver.getTitle();
+
+	}
+
 	public ShoppingCartPage scroll() {
 
-		WebElement element = driver.findElement(scroll);
+		WebElement element = driver.findElement(scrollOne);
 
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(scroll));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(scrollOne));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();", element);
 		return this;

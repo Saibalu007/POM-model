@@ -1,13 +1,10 @@
 {
 	"mailId": "sai@gmail.com",
-	"companyName": "abc",
-	 "firstName": "sai",
+	"firstName": "sai",
 	"lastName": "balu",
 	"vatNo": "123",
 	"streetName": "skm",
-
 	"cityName": "tvm",
 	"postalCode": "12231",
 	"phoneNum": "1231241"
-	
 }

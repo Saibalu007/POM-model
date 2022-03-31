@@ -1,7 +1,7 @@
 package objects;
 
 public class BillingAddress {
-	private String companyName;
+	// private String companyName;
 	private String firstName;
 	private String lastName;
 	private String vatNo;
@@ -22,14 +22,14 @@ public class BillingAddress {
 		return this;
 	}
 
-	public String getCompanyName() {
-		return companyName;
-	}
-
-	public BillingAddress setCompanyName(String companyName) {
-		this.companyName = companyName;
-		return this;
-	}
+//	public String getCompanyName() {
+//		return companyName;
+//	}
+//
+//	public BillingAddress setCompanyName(String companyName) {
+//		this.companyName = companyName;
+//		return this;
+//	}
 
 	public String getFirstName() {
 		return firstName;

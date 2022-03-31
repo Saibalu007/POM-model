@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
 import base.BasePage;
@@ -14,22 +15,33 @@ import objects.BillingAddress;
 public class CheckOutPage extends BasePage {
 
 	private final By mailId = By.xpath("(//input[@type='email'])[1]");
-	private final By companyName = By.xpath("(//div[@class='control']//input[@type='text'])[1]");
+	// private final By companyName =
+	// By.xpath("(//div[@class='control']//input[@type='text'])[2]");
 	private final By firstName = By.xpath("(//div[@class='control']//input[@type='text'])[2]");
 	private final By lastName = By.xpath("(//div[@class='control']//input[@type='text'])[3]");
 	private final By vatNo = By.xpath("(//div[@class='control']//input[@type='text'])[4]");
 	private final By streetName = By.xpath("(//div[@class='control']//input[@type='text'])[5]");
 	private final By country = By.xpath("(//select[@class='select'])[1]");
-	private final By cityName = By.xpath("(//div[@class='control']//input[@type='text'])[7]");
-	private final By postalCode = By.xpath("(//div[@class='control']//input[@type='text'])[8]");
+	private final By cityName = By.xpath("(//div[@class='control']//input[@type='text'])[8]");
+	private final By postalCode = By.xpath("(//div[@class='control']//input[@type='text'])[9]");
 	private final By phoneNum = By.xpath("(//div[@class='control _with-tooltip']//input[@type='text'])[1]");
 	private final By scrolling = By
 			.xpath("(//div[@class='osc-place-order-block checkout-addition-block col-mp mp-12'])[1]");
 	private final By checkout = By.xpath("(//button[@class='action primary checkout'])[2]");
 
+	private final By load = By.xpath("//div[@class='checkout-title']");
+
 	public CheckOutPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
+	}
+
+	public String getTitle() {
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(load));
+		return driver.findElement(load).getText();
+		// System.out.println(driver.findElement(checkOutAssert).getText());
+
 	}
 
 	public CheckOutPage mailId(String mail) {
@@ -38,11 +50,11 @@ public class CheckOutPage extends BasePage {
 		return this;
 	}
 
-	public CheckOutPage companyName(String companynName) {
-
-		driver.findElement(companyName).sendKeys(companynName);
-		return this;
-	}
+	/*
+	 * public CheckOutPage companyName(String companynName) {
+	 * 
+	 * driver.findElement(companyName).sendKeys(companynName); return this; }
+	 */
 
 	public CheckOutPage firtName(String name) {
 
@@ -77,6 +89,7 @@ public class CheckOutPage extends BasePage {
 
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		drop.selectByVisibleText("Liechtenstein");
+		// drop.selectByIndex(0);
 		return this;
 	}
 
@@ -114,11 +127,10 @@ public class CheckOutPage extends BasePage {
 
 	public CheckOutPage setBillingAddress(BillingAddress billingAdress) {
 
-		return mailId(billingAdress.getMailId()).companyName(billingAdress.getCompanyName())
-				.firtName(billingAdress.getFirstName()).lastName(billingAdress.getLastName())
-				.vat(billingAdress.getVatNo()).streetName(billingAdress.getStreetName())
-				.cityName(billingAdress.getCityName()).postNum(billingAdress.getPostalCode())
-				.phoneNum(billingAdress.getPhoneNum());
+		return mailId(billingAdress.getMailId()).firtName(billingAdress.getFirstName())
+				.lastName(billingAdress.getLastName()).vat(billingAdress.getVatNo())
+				.streetName(billingAdress.getStreetName()).cityName(billingAdress.getCityName())
+				.postNum(billingAdress.getPostalCode()).phoneNum(billingAdress.getPhoneNum());
 
 	}
 
