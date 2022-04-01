@@ -12,6 +12,7 @@ public class DriverManager {
 		// WebDriverManager.firefoxdriver().setup();
 		// WebDriver driver = new FirefoxDriver();
 
+		// for Chrome driver
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();

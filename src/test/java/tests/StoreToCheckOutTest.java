@@ -1,9 +1,9 @@
 package tests;
 
-import java.io.IOException;
-
-import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.Assert;
+import org.testng.AssertJUnit;
+import java.io.IOException;
 
 import base.BaseTest;
 import objects.BillingAddress;
@@ -21,7 +21,7 @@ public class StoreToCheckOutTest extends BaseTest {
 
 		ShoppingCartPage scp = sp.load().scrollProduct().clickProduct().scrollUp().clickCartButton();
 		// System.out.println("title = " + scp.getTitle());
-		Assert.assertEquals(scp.getTitle(), "Warenkorb | Fill me");
+		AssertJUnit.assertEquals(scp.getTitle(), "Warenkorb | Fill me");
 
 		CheckOutPage cp = scp.scroll().clickCheckOutBtn();
 

@@ -18,7 +18,6 @@ public class NavigationTest extends BaseTest {
 
 		System.out.println("title = " + sp.getTitle());
 		Assert.assertEquals(sp.getTitle(), "Designs | Fill me");
-		
 
 	}
 }

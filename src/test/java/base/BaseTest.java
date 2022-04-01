@@ -13,15 +13,14 @@ public class BaseTest {
 	@BeforeMethod
 	public void startDriver() {
 
+		//intializing driver is been called from DriverManager Class
 		driver = new DriverManager().intializeDriver();
 
-		// driver.get("https://tmadmin:vh^%25f53cFvdD(5c@staging-fillme.terrificminds.com/");
-		// driver.get("http://tm:1234@dev-woodblocx.terrificminds.com:8090/");
 	}
 
 	@AfterMethod
 	public void quitDriver() {
-		// driver.quit();
+		driver.quit();
 
 	}
 }
